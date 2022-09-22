@@ -1,0 +1,66 @@
+const { createGlobPatternsForDependencies } = require('@nxtensions/astro/tailwind');
+const { join } = require('path');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    join(__dirname, 'src/**/!(*.stories|*.spec).{astro,html,js,jsx,md,svelte,ts,tsx,vue,json}'),
+    ...createGlobPatternsForDependencies(__dirname),
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        "sans-pro": ["Source Sans Pro", "sans-serif"],
+        "sans-dm": ["DM Sans", "sans-serif"],
+        "sans-open": ["Open Sans", "sans-serif"],
+      },
+      fontSize: {
+        "ricoma-xs": "10px",
+        "ricoma-sm": "14px",
+        "ricoma-md": "16px",
+        "ricoma-lg": "18px",
+        "ricoma-lg-2": "20px",
+        "ricoma-xl": "22px",
+        "ricoma-2xl": "26px",
+        "ricoma-3xl": "30px",
+        "ricoma-4xl": "36px",
+        "ricoma-5xl": "42px",
+        "ricoma-6xl": "48px",
+        "ricoma-7xl": "62px",
+      },
+      colors: {
+        blue: {
+          palinate: "#204CDC",
+          picton: "#4EA9DC",
+          memorial: "#122846",
+        },
+        yellow: {
+          chrome: "#FFAA00",
+          chrome2: "#FFAA00",
+          golden: "#FFE500",
+        },
+        orange: {
+          dull: "#E27838",
+          carrot: "FC881D",
+        },
+        gray: {
+          memorial: "#929292",
+          smoke: "#F3F4F5",
+          goose: "#D1D0D4",
+          blue: "#E5E5E5",
+          cloud: "#B6B6B6",
+          ebony: "#0D0E25",
+          "ebony-fade": "rgba(13, 14, 37, 0.6)",
+        },
+        purple: {
+          mirage: "#191425",
+        },
+        red: {
+          vivid: "#D91136",
+        },
+      },
+    },
+    plugins: [],
+  },
+  plugins: [],
+};

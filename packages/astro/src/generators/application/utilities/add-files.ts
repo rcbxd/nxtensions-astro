@@ -22,13 +22,4 @@ export function addFiles(
       tmpl: '',
     }
   );
-
-  if (options.integrations.find((i) => i.name === 'tailwind')) {
-    generateFiles(
-      tree,
-      joinPathFragments(__dirname, '..', 'files', 'tailwind'),
-      options.projectRoot,
-      { tmpl: '' }
-    );
-  }
 }

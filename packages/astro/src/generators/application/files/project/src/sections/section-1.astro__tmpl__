@@ -1,0 +1,7 @@
+---
+import data from '../data/section1.json';
+---
+
+<div>
+  {data.message}
+</div>
